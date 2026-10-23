@@ -93,7 +93,7 @@ resource "aws_instance" "test_vm" {
   vpc_security_group_ids = [aws_security_group.instance_sg.id]
 
   tags = {
-    Name        = "Cloudability-Run-Task-Test"
+    Name        = "Cloudability-Task-Test"
     Environment = "testing"
     // Notice: The 'cost-center' tag is missing!
   }
@@ -103,10 +103,10 @@ resource "aws_instance" "test_vm" {
 # This S3 bucket will be used to test the cost estimation feature
 # based on the values provided in the usage.json file.
 resource "aws_s3_bucket" "test_bucket" {
-  bucket = "cloudability-run-task-test-bucket-${random_string.bucket_suffix.result}"
+  bucket = "cloudability-task-test-bucket-${random_string.bucket_suffix.result}"
 
   tags = {
-    Name        = "Cloudability-Run-Task-Test-Bucket"
+    Name        = "Cloudability-Task-Test-Bucket"
     Environment = "testing"
     cost-center = "engineering-research" // This one is compliant
   }
