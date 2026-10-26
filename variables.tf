@@ -6,5 +6,5 @@ variable "aws_region" {
 variable "instance_type" {
   description = "The type of EC2 instance to deploy."
   type        = string
-  default     = "c5.4xlarge"
+  default     = "t2.medium"
 }
